@@ -1,0 +1,58 @@
+$small-vertical-padding: 8px;
+$medium-vertical-padding: 12px;
+$large-vertical-padding: 16px;
+$xlarge-vertical-padding: 20px;
+
+$small-horizontal-padding: 24px;
+$other-horizontal-padding: 36px;
+
+$small-width: 0px;
+$other-width: 200px;
+
+@mixin button-transform {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.borderWidth {
+  border-width: 2px;
+}
+
+.small {
+  min-width: $small-width;
+  padding: $small-vertical-padding $small-horizontal-padding;
+  @include button-transform;
+}
+
+.medium {
+  min-width: $other-width;
+  padding: $medium-vertical-padding $other-horizontal-padding;
+  @include button-transform;
+}
+
+.large {
+  min-width: $other-width;
+  padding: $large-vertical-padding $other-horizontal-padding;
+  @include button-transform;
+}
+
+.xlarge {
+  min-width: $other-width;
+  padding: $xlarge-vertical-padding $other-horizontal-padding;
+  @include button-transform;
+}
+
+.overDark {
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: 0px 8px 12px 0px rgba(23, 30, 39, 0.7)
+  }
+}
+
+.noDark {
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: 0px 8px 12px 0px rgba(23, 30, 39, 0.2)
+  }
+}

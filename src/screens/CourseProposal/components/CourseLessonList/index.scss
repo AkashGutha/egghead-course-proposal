@@ -1,0 +1,27 @@
+.roundIcon {
+  height: 48px;
+  width: 48px;
+}
+
+.lessonscontainer {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.instructorImg {
+  width: 32px;
+  height: 32px;
+}
+
+.arrowHolder {
+  height: 80px;
+  transition: 0.15s ease-in;
+}
+
+.arrowRotated {
+  transform: rotate(-180deg);
+}
+
+.lessonControls {
+  transition: 0.6s ease-out;
+}

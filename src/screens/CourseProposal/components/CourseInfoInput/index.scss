@@ -1,0 +1,20 @@
+input::placeholder{
+    color: rgba(0, 0, 0, 0.15)
+}
+input::focus{
+  outline: none;
+}
+
+textarea::placeholder{
+    color: rgba(0, 0, 0, 0.15)
+}
+
+.img{
+    width: 210px;
+    height: 210px;
+    @include non-mobile{
+    width: 420px;
+    height: 420px;
+    }
+  }
+  
