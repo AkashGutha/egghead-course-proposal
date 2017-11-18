@@ -70,7 +70,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "surge": "NODE_PATH=./src node scripts/build.js && cd build && surge && cd ..",
+    "surge": "npm run build && cd build && surge && cd ..",
     "start": "NODE_PATH=./src node scripts/start.js",
     "build": "NODE_PATH=./src node scripts/build.js && echo egghead-course-proposal.surge.sh > build/CNAME",
     "test": "NODE_PATH=./src node scripts/test.js --env=jsdom"
