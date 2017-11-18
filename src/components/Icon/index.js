@@ -53,7 +53,8 @@ EggheadTwitter,
 EggheadUpdate,
 EggheadUpload,
 EggheadUploadCloud,
-EggheadThinHamburger
+EggheadThinHamburger,
+EggheadEditBook
 } from 'react-icons/lib/egghead'
 import {
   FaAdjust,
@@ -564,6 +565,7 @@ const typeToSvgIcon = {
   'dot-circle-o': FaDotCircleO,
   'download': FaDownload,
   'edit': EggheadEdit,
+  'edit-book': EggheadEditBook,
   'eject': FaEject,
   'ellipsis-h': FaEllipsisH,
   'ellipsis-v': FaEllipsisV,

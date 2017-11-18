@@ -53,7 +53,7 @@
     "react-dnd": "^2.5.1",
     "react-dnd-html5-backend": "^2.5.1",
     "react-dom": "^15.0.0",
-    "react-icons": "eggheadio/react-icons#3.9.8",
+    "react-icons": "eggheadio/react-icons#3.9.9",
     "react-modal": "^2.3.2",
     "react-router": "^4.2.0",
     "react-toggled": "^1.1.2",
@@ -70,8 +70,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "surge": "NODE_PATH=./src node scripts/build.js && cd build && surge && cd ..",
     "start": "NODE_PATH=./src node scripts/start.js",
-    "build": "NODE_PATH=./src node scripts/build.js",
+    "build": "NODE_PATH=./src node scripts/build.js && echo egghead-course-proposal.surge.sh > build/CNAME",
     "test": "NODE_PATH=./src node scripts/test.js --env=jsdom"
   },
   "jest": {

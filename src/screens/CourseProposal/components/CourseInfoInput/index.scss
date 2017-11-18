@@ -18,3 +18,9 @@ textarea::placeholder{
     }
   }
   
+  .container {
+    @include non-mobile {
+      max-width: 1280px;
+    }
+  }
+  

@@ -9,13 +9,13 @@ const LessonDetailEntry = props => {
 
   return (
     <div className="flex w-100 bg-white pa3 b--black-10 br2 ba items-center justify-between">
-      <div className="w-90  flex items-center">
+      <div className="w-100  flex items-center">
         <div className="dim pointer h-100 o-0">
           <Icon type="thin-hamburger" color="black-30" size="5" />
         </div>
         <div className="ml3">{lessonNumber}</div>
         <input
-          className="ml3 pa3 avenir ba bw2 b--black-10 br2 w-80"
+          className="mh3 pa3 avenir ba bw2 b--black-10 br2 w-100"
           placeholder="New lesson title"
         />
       </div>
@@ -47,7 +47,7 @@ class LessonDetail extends Component {
     return (
       <div className="flex flex-column w-100 bg-white b--black-10 bl br bt br2 br--bottom items-center justify-between">
         <div className="w-100 flex items-center justify-between">
-          <div className="w-90  flex items-center">
+          <div className="w-100  flex items-center">
             <div className="ml3">
               <Icon type="thin-hamburger" color="black-30" size="5" />
             </div>
