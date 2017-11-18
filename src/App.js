@@ -6,9 +6,9 @@ class App extends Component {
   render() {
     return (
       <StaticRouter context={{}}>
-
           <div className='bg-base vh-100'>
               <CourseProposal />
+              
           </div>
       </StaticRouter>
     )
