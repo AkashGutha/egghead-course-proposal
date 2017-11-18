@@ -12,7 +12,7 @@ import styles from "./index.scss";
 @observer
 class CourseProposal extends Component {
   render() {
-    const isApproved = false;
+    const isApproved = undefined;
     const lessons = ["1", "2", "3","1", "2", "3"];
 
     return (

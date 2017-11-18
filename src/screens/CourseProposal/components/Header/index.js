@@ -13,7 +13,7 @@ class Header extends Component {
         <div
           className={`flex flex-center w-100 items-center justify-between pa5 mt5 bg-base flex-column flex-row-l ${styles.container}`}
         >
-          <div className="flex flex-column w-60-l w-100-m w-100">
+          <div className="flex flex-column w-60-l w-100-m w-100 items-center items-center-m items-start-ns">
             <div className="f3 avenir white fw4">
               {isApproved === undefined && (
                 <span>
@@ -35,10 +35,11 @@ class Header extends Component {
                   <span className="yellow fw4 mr3"> Waiting for approval </span>
                 ))}
 
-              <span>{"For inspiration see our "}</span>
-              <a href="" className="link light-gray dim underline">
+              <span>{"Check out the "}</span>
+              <a href="" className="link light-gray dim underline fw3">
                 Proposal Guide
               </a>
+              <span>{" for more information"}</span>
             </div>
           </div>
           <div className="flex flex-column mt3-m flex-row-m flex-row-l">
@@ -61,7 +62,7 @@ class Header extends Component {
             )}
             {isApproved !== undefined &&
               (isApproved ? (
-                <div className=" flex flex-column mh1 mv1">
+                <div className=" flex flex-column mh1 mv3">
                   <Button
                     size="small"
                     color="dark-blue"
@@ -73,7 +74,7 @@ class Header extends Component {
                   </Button>
                 </div>
               ) : (
-                <div className=" flex flex-column items-center mh1 mv1">
+                <div className=" flex flex-column items-center mh1 mv3 dim pointer">
                   <Icon type="edit-book" color="white" size="2" />
                   <span className="f5 mt2 fw2 white">Propose a new course</span>
                 </div>

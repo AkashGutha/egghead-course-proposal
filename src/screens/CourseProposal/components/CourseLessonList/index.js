@@ -64,14 +64,15 @@ class LessonDetail extends Component {
             <p className="dn db-l pointer underline ml3 f6">Sam Barber</p>
           </div>
           <div
-            className={`hover-bg-gray pointer bl b--black-10 ml2 flex items-center ${styles.arrowHolder} ${this
+            className={`hover-bg-gray pointer bl b--black-10 ml2 flex items-center ${this
               .state.isOpen
               ? "bg-white-secondary"
               : null} `}
             onClick={this.toggleLessonEditPanel}
           >
             <div
-              className={`arrowHolder  ${this.state.isOpen
+              className={` flex items-center ${styles.arrowHolder}  ${this.state
+                .isOpen
                 ? styles.arrowRotated
                 : null}`}
             >
@@ -80,9 +81,9 @@ class LessonDetail extends Component {
           </div>
         </div>
         <div
-          className={
-            this.state.isOpen ? `w-100 db ${styles.lessonControls}` : "dn"
-          }
+          className={` w-100 ${styles.lessonControls} 
+            ${this.state.isOpen ? null : "dn"}
+            `}
         >
           <div className="flex items-center justify-end bt b--black-10 bg-white-secondary">
             <div className="hover-bg-white pointer bl h-100 b--black-10 flex items-center pv2 ph4">
