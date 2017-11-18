@@ -12,7 +12,7 @@ class CourseInfoInput extends Component {
         <div
           className={`flex w-100 flex-column flex-row-l items-center pa5 justify-between ${styles.container}`}
         >
-          <div className="flex flex-column w-100 w-50-l">
+          <div className="flex flex-column w-100 w-70-l">
             <input
               className={`f2 avenir bn br1 bg-gray pa3 black-60`}
               placeholder="New Course Title"
