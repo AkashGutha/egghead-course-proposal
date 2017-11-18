@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
-import {StaticRouter} from 'react-router'
-import CourseProposal from './screens/CourseProposal'
+import React, { Component } from "react";
+import { Route } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import CourseProposal from "./screens/CourseProposal";
 import CourseEdit from "./screens/CourseEdit";
 
 class App extends Component {
   render() {
     return (
-      <StaticRouter context={{}}>
-          <div className='bg-white-secondary vh-100'>
-              <CourseEdit />
-          </div>
-      </StaticRouter>
-    )
+      <BrowserRouter>
+        <div className="bg-white-secondary">
+          <Route exact path="/" component={CourseProposal} />
+          <Route exact path="/edit" component={CourseEdit} />
+        </div>
+      </BrowserRouter>
+    );
   }
 }
 
-export default App
+export default App;
