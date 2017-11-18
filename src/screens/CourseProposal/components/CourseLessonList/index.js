@@ -1,16 +1,17 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styles from './index.scss'
-import Icon from 'components/Icon'
+import styles from "./index.scss";
+import Icon from "components/Icon";
+import { map } from "lodash";
 
 const LessonDetailEntry = props => {
-  const {lessonNumber} = props
+  const { lessonNumber } = props;
 
   return (
     <div className="flex w-100 bg-white pa3 b--black-10 br2 ba items-center justify-between">
       <div className="w-90  flex items-center">
         <div className="dim pointer h-100 o-0">
-          <Icon type="thin-hamburger" color="black" />
+          <Icon type="thin-hamburger" color="black-30" size="5" />
         </div>
         <div className="ml3">{lessonNumber}</div>
         <input
@@ -24,23 +25,23 @@ const LessonDetailEntry = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 class LessonDetail extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isOpen: false,
-    }
+      lessonNumber: this.props.lessonNumber
+    };
   }
 
   toggleLessonEditPanel = () => {
     this.setState({
-      isOpen: !this.state.isOpen,
-      lessonNumber: this.props.lessonNumber,
-    })
-  }
+      isOpen: !this.state.isOpen
+    });
+  };
 
   render(props) {
     return (
@@ -48,7 +49,7 @@ class LessonDetail extends Component {
         <div className="w-100 flex items-center justify-between">
           <div className="w-90  flex items-center">
             <div className="ml3">
-              <Icon type="thin-hamburger" color="black" />
+              <Icon type="thin-hamburger" color="black-30" size="5" />
             </div>
             <div className="ml3">{this.state.lessonNumber}</div>
             <input
@@ -63,15 +64,16 @@ class LessonDetail extends Component {
             <p className="dn db-l pointer underline ml3 f6">Sam Barber</p>
           </div>
           <div
-            className={`hover-bg-gray pointer bl b--black-10 ml2 flex items-center ${
-              styles.arrowHolder
-            } ${this.state.isOpen ? 'bg-white-secondary' : null} `}
+            className={`hover-bg-gray pointer bl b--black-10 ml2 flex items-center ${styles.arrowHolder} ${this
+              .state.isOpen
+              ? "bg-white-secondary"
+              : null} `}
             onClick={this.toggleLessonEditPanel}
           >
             <div
-              className={`arrowHolder  ${
-                this.state.isOpen ? styles.arrowRotated : null
-              }`}
+              className={`arrowHolder  ${this.state.isOpen
+                ? styles.arrowRotated
+                : null}`}
             >
               <Icon type="arrow-down" color="dark-blue" size="3" />
             </div>
@@ -79,7 +81,7 @@ class LessonDetail extends Component {
         </div>
         <div
           className={
-            this.state.isOpen ? `w-100 db ${styles.lessonControls}` : 'dn'
+            this.state.isOpen ? `w-100 db ${styles.lessonControls}` : "dn"
           }
         >
           <div className="flex items-center justify-end bt b--black-10 bg-white-secondary">
@@ -97,26 +99,27 @@ class LessonDetail extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 class CourseLessonList extends Component {
   render() {
-    const {lessonCount} = this.props
+    const { lessons } = this.props;
     return (
       <div className="pa2 pa5-ns bg-gray">
         <div className={styles.lessonscontainer}>
           <div className="mt3 mt0-ns avenir f3 black">Lessons in course</div>
           <div className="mt4 mt3-ns">
-            <LessonDetail lessonNumber="1" />
-            <LessonDetail lessonNumber="2" />
-            <LessonDetailEntry lessonNumber={lessonCount+1} />
+            {map(lessons, (lesson, index) => (
+              <LessonDetail lessonNumber={index + 1} key={index} />
+            ))}
+            <LessonDetailEntry lessonNumber={lessons.length + 1} />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default CourseLessonList
+export default CourseLessonList;
